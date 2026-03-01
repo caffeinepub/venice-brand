@@ -1,7 +1,15 @@
 import { ArtDecoDivider } from "../components/ArtDecoDivider";
 import { EraBadge } from "../components/EraBadge";
 
-type Page = "home" | "beauty" | "fashion" | "talent" | "contact";
+type Page =
+  | "home"
+  | "beauty"
+  | "fashion"
+  | "talent"
+  | "contact"
+  | "signup"
+  | "signin"
+  | "inbox";
 
 interface TalentPageProps {
   onNavigate: (page: Page) => void;

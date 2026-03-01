@@ -5,9 +5,20 @@ import { BeautyPage } from "./pages/BeautyPage";
 import { ContactPage } from "./pages/ContactPage";
 import { FashionPage } from "./pages/FashionPage";
 import { HomePage } from "./pages/HomePage";
+import { InboxPage } from "./pages/InboxPage";
+import { SignInPage } from "./pages/SignInPage";
+import { SignUpPage } from "./pages/SignUpPage";
 import { TalentPage } from "./pages/TalentPage";
 
-type Page = "home" | "beauty" | "fashion" | "talent" | "contact";
+export type Page =
+  | "home"
+  | "beauty"
+  | "fashion"
+  | "talent"
+  | "contact"
+  | "signup"
+  | "signin"
+  | "inbox";
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<Page>("home");
@@ -17,11 +28,9 @@ export default function App() {
     if (page === currentPage) return;
     setIsAnimating(false);
 
-    // Trigger re-render with new page, then animate in
     setCurrentPage(page);
     window.scrollTo({ top: 0, behavior: "instant" });
 
-    // Small delay to ensure new page renders, then animate
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         setIsAnimating(true);
@@ -29,7 +38,6 @@ export default function App() {
     });
   };
 
-  // Animate in on first render
   useEffect(() => {
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
@@ -50,6 +58,12 @@ export default function App() {
         return <TalentPage onNavigate={handleNavigate} />;
       case "contact":
         return <ContactPage />;
+      case "signup":
+        return <SignUpPage onNavigate={handleNavigate} />;
+      case "signin":
+        return <SignInPage onNavigate={handleNavigate} />;
+      case "inbox":
+        return <InboxPage onNavigate={handleNavigate} />;
       default:
         return <HomePage onNavigate={handleNavigate} />;
     }

@@ -1,7 +1,15 @@
 import { ArtDecoDivider } from "./ArtDecoDivider";
 import { EraBadge } from "./EraBadge";
 
-type Page = "home" | "beauty" | "fashion" | "talent" | "contact";
+type Page =
+  | "home"
+  | "beauty"
+  | "fashion"
+  | "talent"
+  | "contact"
+  | "signup"
+  | "signin"
+  | "inbox";
 
 interface FooterProps {
   onNavigate: (page: Page) => void;
