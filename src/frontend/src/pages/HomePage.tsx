@@ -280,8 +280,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   lineHeight: 1.4,
                 }}
               >
-                Beauty is not a season. It is a state of grace that belongs to
-                every era, every woman, and every age.
+                A beauty company made simply by a Girly boy.
               </blockquote>
               <div className="mt-4 flex items-center gap-3">
                 <div
@@ -292,7 +291,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   className="font-heading text-xs tracking-[0.15em] uppercase not-italic"
                   style={{ color: "oklch(0.5 0.04 60)" }}
                 >
-                  The VENICE Edit
+                  Keegan Loliez — The CEO of VENICE
                 </cite>
               </div>
             </div>
@@ -489,15 +488,14 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 lineHeight: 1.5,
               }}
             >
-              "Where every era finds its elegance, and every woman discovers her
-              timeless self."
+              "A beauty company made simply by a Girly boy."
             </p>
             <footer>
               <cite
                 className="font-heading text-xs tracking-[0.25em] uppercase not-italic"
                 style={{ color: "oklch(0.72 0.12 75)" }}
               >
-                — The VENICE Edit
+                — Keegan Loliez, The CEO of VENICE
               </cite>
             </footer>
           </blockquote>
