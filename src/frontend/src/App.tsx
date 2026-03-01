@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Footer } from "./components/Footer";
 import { Navigation } from "./components/Navigation";
+import { useAuth } from "./hooks/useAuth";
 import { BeautyPage } from "./pages/BeautyPage";
 import { ContactPage } from "./pages/ContactPage";
 import { FashionPage } from "./pages/FashionPage";
@@ -23,6 +24,7 @@ export type Page =
 export default function App() {
   const [currentPage, setCurrentPage] = useState<Page>("home");
   const [isAnimating, setIsAnimating] = useState(false);
+  const { isLoggedIn } = useAuth();
 
   const handleNavigate = (page: Page) => {
     if (page === currentPage) return;
@@ -47,6 +49,11 @@ export default function App() {
   }, []);
 
   const renderPage = () => {
+    // Redirect already-signed-in users away from auth pages
+    if ((currentPage === "signin" || currentPage === "signup") && isLoggedIn) {
+      return <InboxPage onNavigate={handleNavigate} />;
+    }
+
     switch (currentPage) {
       case "home":
         return <HomePage onNavigate={handleNavigate} />;

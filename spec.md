@@ -1,42 +1,30 @@
 # VENICE Brand
 
 ## Current State
-
-Five-page vintage editorial website (Home, Beauty, Fashion, Talent, Contact). The Contact page lets visitors generate a VENICE email address by choosing a department and entering a name. No user accounts, no login, no inbox. Backend only has a `ping()` stub.
+- Full multi-page app: Home, Beauty, Fashion, Talent, Contact, Inbox, Sign In, Sign Up
+- Auth is localStorage-based with session persistence (SESSION_KEY stored on login/signup)
+- On page load, `useAuth` reads the stored session and restores `currentUserEmail`
+- Navigation shows Inbox/email/Sign Out when logged in, or Sign In/Sign Up when logged out
+- However: if a user navigates to the Sign In or Sign Up page while already logged in, those pages still render normally (no redirect)
+- HomePage has a full-viewport Art Deco hero with a static background image, followed by About Strip, Feature Cards, Quote Banner, and Latest From The Edit sections
+- No image slideshow exists on the home page
 
 ## Requested Changes (Diff)
 
 ### Add
-- User account system: register with email + password, login, logout
-- Personal inbox: logged-in users can see all emails sent to them by other users on the platform
-- Send email feature: compose and send a message to another VENICE user by their email address
-- Verified badge: `KeegantheCEO@VENICEtalent.com` is the only verified account, shown with a sparkly red checkmark badge next to the email wherever it appears (inbox sender column, profile header)
-- Auth pages: Sign Up and Log In accessible from the Navigation bar
-- Inbox page: shows received messages (from, subject, body, timestamp); clicking a message opens it
+- Image slideshow on the HomePage hero section: full-width, auto-advancing (4-5 seconds per slide), with manual prev/next arrows and dot indicators; featuring AI-generated vintage portrait images of Marilyn Monroe-style and 1950s/1980s icons with glamour aesthetic
+- Persistent profile redirect: if a user is already signed in and navigates to `/signin` or `/signup` pages, automatically redirect them to their Inbox/profile page instead
 
 ### Modify
-- Navigation: add "Sign In" / "My Inbox" links (context-aware based on auth state)
-- Backend: replace ping stub with full accounts + messaging API
+- App.tsx: when rendering `signin` or `signup` pages, check `isLoggedIn` (from `useAuth`) and redirect to `inbox` if true
+- HomePage: replace static hero background with an image slideshow component; the VENICE wordmark, tagline, and CTA buttons remain overlaid on top of the slideshow
+- The slideshow sits behind the existing hero overlay and text content
 
 ### Remove
-- Nothing removed from existing pages
+- Nothing removed
 
 ## Implementation Plan
-
-1. Backend (Motoko):
-   - `register(email, password)` → creates account, returns ok/err
-   - `login(email, password)` → returns session token or ok/err
-   - `logout()` → clears session
-   - `getProfile()` → returns current user's email and verified status
-   - `sendEmail(toEmail, subject, body)` → stores message for recipient
-   - `getInbox()` → returns array of received messages for current user
-   - `getMessage(id)` → returns full message
-   - Verified flag: hardcode `KeegantheCEO@VENICEtalent.com` as verified
-
-2. Frontend:
-   - `SignUpPage`: form with email + password + confirm password
-   - `SignInPage`: form with email + password
-   - `InboxPage`: list of received messages with sender, subject, timestamp; click to read; compose button to send new email
-   - `ComposeModal`: to, subject, body fields
-   - Verified badge component: sparkly red animated checkmark shown next to verified email addresses
-   - Navigation updated: show "Sign In / Sign Up" when logged out; show "Inbox" + user email + "Sign Out" when logged in
+1. Generate 5 AI portrait images for the slideshow (Marilyn Monroe-style, Audrey Hepburn-style, Grace Kelly-style, Madonna 1980s-style, Cyndi Lauper 1980s-style) — vintage editorial look
+2. Create a `HeroSlideshow` component that cycles through the images with fade transitions, auto-advance timer, prev/next arrows, and dot indicators
+3. Integrate `HeroSlideshow` into `HomePage` hero section as the background layer (behind the dark overlay and text)
+4. Update `App.tsx` to call `useAuth` and redirect signed-in users away from `signin`/`signup` pages to `inbox`

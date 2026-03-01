@@ -1,5 +1,6 @@
 import { ArtDecoDivider } from "../components/ArtDecoDivider";
 import { EraBadge } from "../components/EraBadge";
+import { HeroSlideshow } from "../components/HeroSlideshow";
 
 type Page =
   | "home"
@@ -80,20 +81,32 @@ export function HomePage({ onNavigate }: HomePageProps) {
     <main>
       {/* ── HERO ────────────────────────────────────────────── */}
       <section
-        className="relative flex items-center justify-center vintage-texture"
+        className="relative flex items-center justify-center vintage-texture overflow-hidden"
         style={{
           minHeight: "100vh",
           paddingTop: "160px",
-          background: `
-            linear-gradient(to bottom, oklch(0.15 0.04 15 / 0.85) 0%, oklch(0.10 0.03 15 / 0.92) 100%),
-            url('/assets/generated/venice-hero-deco.dim_1200x800.jpg') center/cover no-repeat
-          `,
+          backgroundColor: "oklch(0.15 0.04 15)",
         }}
       >
-        {/* Art Deco geometric overlay */}
+        {/* Slideshow — z-0, fills the entire hero */}
+        <HeroSlideshow className="z-0" />
+
+        {/* Dark readability overlay — z-1, sits above slideshow */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
+            zIndex: 1,
+            background:
+              "linear-gradient(to bottom, oklch(0.15 0.04 15 / 0.75) 0%, oklch(0.10 0.03 15 / 0.88) 100%)",
+          }}
+          aria-hidden="true"
+        />
+
+        {/* Art Deco geometric overlay — z-2 */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            zIndex: 2,
             backgroundImage: `
               repeating-linear-gradient(
                 45deg,
@@ -107,7 +120,10 @@ export function HomePage({ onNavigate }: HomePageProps) {
           aria-hidden="true"
         />
 
-        <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
+        <div
+          className="relative text-center px-6 max-w-5xl mx-auto"
+          style={{ zIndex: 10 }}
+        >
           {/* Era badge */}
           <div className="flex justify-center mb-6">
             <EraBadge text="Est. 1920 · The Golden Age" variant="gold" />
