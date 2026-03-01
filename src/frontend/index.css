@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Great+Vibes&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.25rem;
+
+    /* VENICE Vintage Palette — OKLCH raw L C H values */
+    --background: 0.97 0.02 85;
+    --foreground: 0.18 0.03 50;
+    --card: 0.94 0.025 80;
+    --card-foreground: 0.18 0.03 50;
+    --popover: 0.96 0.02 80;
+    --popover-foreground: 0.18 0.03 50;
+    --primary: 0.35 0.12 15;
+    --primary-foreground: 0.97 0.01 85;
+    --secondary: 0.78 0.07 20;
+    --secondary-foreground: 0.18 0.03 50;
+    --muted: 0.88 0.04 70;
+    --muted-foreground: 0.5 0.04 60;
+    --accent: 0.72 0.12 75;
+    --accent-foreground: 0.18 0.03 50;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.82 0.04 70;
+    --input: 0.88 0.03 75;
+    --ring: 0.72 0.12 75;
+
+    /* Extended vintage tokens */
+    --gold: 0.72 0.12 75;
+    --burgundy: 0.35 0.12 15;
+    --ivory: 0.97 0.02 85;
+    --sepia: 0.65 0.06 65;
+    --dusty-rose: 0.78 0.07 20;
+    --navy: 0.22 0.05 250;
+    --parchment: 0.91 0.03 78;
+
+    --chart-1: 0.72 0.12 75;
+    --chart-2: 0.35 0.12 15;
+    --chart-3: 0.78 0.07 20;
+    --chart-4: 0.65 0.06 65;
+    --chart-5: 0.22 0.05 250;
+    --sidebar: 0.35 0.12 15;
+    --sidebar-foreground: 0.97 0.01 85;
+    --sidebar-primary: 0.72 0.12 75;
+    --sidebar-primary-foreground: 0.18 0.03 50;
+    --sidebar-accent: 0.45 0.10 15;
+    --sidebar-accent-foreground: 0.97 0.01 85;
+    --sidebar-border: 0.45 0.10 15;
+    --sidebar-ring: 0.72 0.12 75;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    background-color: oklch(0.97 0.02 85);
+    background-image:
+      radial-gradient(ellipse at 20% 50%, oklch(0.91 0.03 78 / 0.5) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, oklch(0.93 0.025 72 / 0.4) 0%, transparent 40%),
+      radial-gradient(ellipse at 60% 80%, oklch(0.89 0.04 80 / 0.3) 0%, transparent 40%);
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.4'/%3E%3C/svg%3E");
+    opacity: 0.035;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Vintage texture overlay */
+  .vintage-texture {
+    position: relative;
+  }
+  .vintage-texture::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Art Deco border */
+  .deco-border {
+    border: 2px solid oklch(0.72 0.12 75);
+    box-shadow: 0 0 0 4px oklch(0.97 0.02 85), 0 0 0 6px oklch(0.72 0.12 75 / 0.4);
+  }
+
+  /* Double rule masthead divider */
+  .masthead-rules {
+    border-top: 3px double oklch(0.72 0.12 75);
+    border-bottom: 3px double oklch(0.72 0.12 75);
+    padding: 8px 0;
+  }
+
+  /* Sepia hover effect */
+  .sepia-hover {
+    transition: filter 0.3s ease;
+  }
+  .sepia-hover:hover {
+    filter: sepia(0.6) contrast(1.05);
+  }
+
+  /* Vintage gold text */
+  .text-gold {
+    color: oklch(0.72 0.12 75);
+  }
+
+  /* Parchment background */
+  .bg-parchment {
+    background-color: oklch(0.91 0.03 78);
+  }
+
+  /* Burgundy background */
+  .bg-burgundy {
+    background-color: oklch(0.35 0.12 15);
+  }
+
+  /* Navy background */
+  .bg-navy {
+    background-color: oklch(0.22 0.05 250);
+  }
+
+  /* Page transition */
+  .page-enter {
+    animation: pageEnter 0.5s ease forwards;
+  }
+
+  @keyframes pageEnter {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Wax seal */
+  .wax-seal {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, oklch(0.50 0.14 15), oklch(0.30 0.12 15));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: oklch(0.72 0.12 75);
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    box-shadow: 0 2px 8px oklch(0.18 0.03 50 / 0.4), inset 0 1px 2px oklch(0.72 0.12 75 / 0.2);
+    flex-shrink: 0;
+  }
+
+  /* Ornate card */
+  .ornate-card {
+    background: oklch(0.94 0.025 80);
+    border: 1px solid oklch(0.72 0.12 75 / 0.5);
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .ornate-card::before,
+  .ornate-card::after {
+    content: '';
+    position: absolute;
+    border: 1px solid oklch(0.72 0.12 75 / 0.3);
+    pointer-events: none;
+  }
+
+  .ornate-card::before {
+    inset: 4px;
+  }
+
+  .ornate-card:hover {
+    border-color: oklch(0.72 0.12 75);
+    box-shadow: 0 8px 32px oklch(0.18 0.03 50 / 0.15), 0 0 0 1px oklch(0.72 0.12 75 / 0.5);
+    transform: translateY(-2px);
+  }
+
+  /* Era badge */
+  .era-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.2rem 0.75rem;
+    border: 1px solid oklch(0.72 0.12 75 / 0.6);
+    font-family: 'Playfair Display', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: oklch(0.72 0.12 75);
+    background: oklch(0.72 0.12 75 / 0.08);
+  }
+
+  /* Spotlight gradient for talent */
+  .spotlight-bg {
+    background: radial-gradient(ellipse at 50% 0%, oklch(0.45 0.08 75 / 0.3) 0%, oklch(0.22 0.05 250) 60%);
+  }
+
+  /* Art Deco corner ornaments */
+  .corner-ornament {
+    position: relative;
+  }
+  .corner-ornament::before {
+    content: '✦';
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    color: oklch(0.72 0.12 75 / 0.5);
+    font-size: 0.8rem;
+    pointer-events: none;
+  }
+  .corner-ornament::after {
+    content: '✦';
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    color: oklch(0.72 0.12 75 / 0.5);
+    font-size: 0.8rem;
+    pointer-events: none;
+  }
+}
