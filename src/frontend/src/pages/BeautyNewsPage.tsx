@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { ArtDecoDivider } from "../components/ArtDecoDivider";
 import { EraBadge } from "../components/EraBadge";
 
@@ -11,52 +12,77 @@ interface NewsArticle {
 
 const newsArticles: NewsArticle[] = [
   {
-    category: "FASHION",
+    category: "BEAUTY",
     categoryVariant: "burgundy",
-    headline: "Vogue's Most Daring Fall Runways: Fashion's New Fearlessness",
-    body: "The fall 2024 runways delivered a thunderous rebuttal to minimalism — maximalism has returned, and it arrived draped in feathers, sequins, and silhouettes so dramatic they commanded silence before applause. Balenciaga sent models down the runway in sweeping hourglass coats sculpted to near-architectural perfection, while Valentino doubled down on the couture rose motif across gowns that swallowed the light whole. Bottega Veneta's collection favored a quieter boldness: oversized leather trenches in colors that had no name — somewhere between slate, storm, and desire. Designers across Paris and Milan agreed on one thing this season: subtlety is a missed opportunity. Statement-making color, whether in vivid jade or bruised violet, anchored the most talked-about looks from Fendi to Saint Laurent. What these runways declared, unanimously, is that fashion in 2024 belongs to those who dress without apology.",
+    headline:
+      "Charlotte Tilbury's Pillow Talk Expands: The Cult Lip Shade Gets a Full Collection",
+    body: "Charlotte Tilbury's Pillow Talk — the nude-pink lip shade that launched a thousand searches and sparked a permanent waitlist — has officially expanded into a full beauty collection for 2024. The franchise now spans lip liners, blushes, eyeshadow palettes, highlighters, and a new Pillow Talk Dreams bronzing palette that has already sold out in four countries. The original Pillow Talk Matte Revolution Lipstick, once described as 'the most universally flattering shade ever created,' inspired the line's signature warm rose-brown palette used across every new product. Tilbury, speaking at the London launch, called the collection 'the wardrobe of a woman who glows from the inside out.' Beauty editors from Vogue UK to WWD have singled out the Pillow Talk Blush Wand as a breakout hit — a tinted gel-cream blush that builds from sheer flush to full bloom in seconds. The collection marks one of the most commercially successful franchise expansions in prestige beauty history.",
+    isBreaking: false,
   },
   {
-    category: "MAKEUP",
-    categoryVariant: "sepia",
-    headline: "The No-Makeup Makeup Revolution: Hollywood's Quiet Rebellion",
-    body: "Across Netflix's most-streamed dramas, a new kind of beauty is being written into the script — the luminous, barely-there look that whispers confidence instead of announcing it. Zendaya, whose Euphoria character sparked an entire era of graphic liner and glitter, pivoted dramatically this season toward skin-first beauty: a dewy, sun-kissed canvas sealed with a single swipe of sheer balm gloss. Sydney Sweeney, appearing at premiere after premiere with skin that seems lit from within, credits a strict double-cleanse and hyaluronic acid routine followed by the lightest possible tinted moisturizer. The technique relies on perfecting the base rather than correcting it — skin prep is now the real makeup. Product architects like Westman Atelier and Merit have built entire lines around this philosophy, with skin serums that function as foundation and pigment sticks that blur category lines entirely. Hollywood's most influential faces are telling us the same thing: the best makeup looks like none at all.",
+    category: "PLAYBOY",
+    categoryVariant: "burgundy",
+    headline:
+      "Playboy's 2024 Centerfold Revival: The Brand's Biggest Comeback Issue",
+    body: "Playboy officially returned the print centerfold in 2024 after a controversial years-long absence, and the revival issue became one of the brand's highest-selling editions in over a decade. The decision reversed a 2015 choice to remove explicit nudity — itself reversed in 2017 — and signaled the brand's commitment to reclaiming its identity as a bold, body-positive cultural publication. The cover star, a social media personality with over 4 million followers, worked with Playboy's creative team on every aspect of the shoot, from lighting direction to final retouching approvals, in what the brand called 'the most collaborative centerfold process in our history.' The issue also features a long-form interview with a sitting congresswoman on media censorship, a fashion editorial shot in Palm Springs, and a beauty roundtable with three current Playmates discussing their skincare rituals and the pressure to look 'effortlessly perfect.' The revival marks a new chapter for Playboy as it navigates the intersection of legacy media and creator-economy culture.",
     isBreaking: true,
   },
   {
-    category: "TALENT — PLAYBOY",
-    categoryVariant: "burgundy",
-    headline: "Playboy's New Era: The Playmates Redefining Modern Beauty",
-    body: "Playboy's long-anticipated rebrand has arrived not as a whisper but as a fully articulated manifesto, and the Playmates leading this era are among the most fashion-forward, entrepreneurially driven talents the brand has ever featured. Today's Playmates are building beauty brands, launching podcasts, and partnering with sustainable fashion houses — their Playboy association is one note in a richly orchestrated career, not the whole song. The June cover star launched a skincare line focused on barrier repair the same month her centerfold ran; her philosophy, she told VENICE, is that beauty is something you protect, not perform. The brand's visual identity has evolved accordingly: warmer lighting, editorial-grade beauty direction, and a deliberate celebration of diverse skin tones, body types, and ages that signals a genuine repositioning. Former Playmates like Holly Madison and Jenny McCarthy pioneered the celebrity-to-media-maven pipeline, and today's talents are moving even faster — leveraging social media, co-creating with beauty houses, and becoming beauty authorities in their own right. Playboy, in 2024, is as much a beauty and fashion platform as it ever was a lifestyle one.",
+    category: "SKINCARE",
+    categoryVariant: "sepia",
+    headline:
+      "Barrier Repair is 2024's Dominant Skincare Trend — And It's Not Going Anywhere",
+    body: "After years of aggressive exfoliation, acids at every step, and retinol stacked on retinol, the skincare world has arrived at a collective moment of repair — and barrier restoration is the dominant trend of 2024 with no sign of slowing. Skincare brands from La Roche-Posay to luxury maison Augustinus Bader have reported record-breaking sales of ceramide-heavy, fragrance-free moisturizers designed to rebuild the skin's lipid barrier after years of over-treatment. Dermatologists across TikTok and Instagram have been unified in their messaging: strip your routine back, moisturize generously, wear SPF daily, and give your skin time to recover. The trend has also reshaped product development — Drunk Elephant, Paula's Choice, and newer brands like Byoma and LANEIGE have all launched barrier-focused hero products in 2024 that immediately entered bestseller lists. The movement reflects a broader cultural shift toward skin health over skin perfection, with consumers increasingly choosing the dewy, nourished look of a well-cared-for complexion over heavy foundation coverage.",
+    isBreaking: false,
   },
   {
-    category: "TALENT — NETFLIX",
+    category: "PLAYBOY",
+    categoryVariant: "burgundy",
+    headline: "Playmate of the Year 2024: Who She Is and What She's Building",
+    body: "The 2024 Playmate of the Year has been announced, and she arrives with a business portfolio that would make any entrepreneur envious: a beauty brand in development, a fitness app with 200,000 waitlist sign-ups, and a documentary series in production at a major streaming platform. Her selection by Playboy's editorial board was, according to the publication, driven as much by her entrepreneurial ambition as her physical presence — a reflection of the brand's evolving definition of what a Playmate represents in 2024. In her Playboy interview, she discussed the double standard she faces as a public figure who is simultaneously taken seriously in business rooms and dismissed in others — a tension she says she navigates by 'showing up so prepared that no one can question what I know.' Her beauty routine, detailed across six pages of the feature, is built around skin hydration, minimal makeup, and the belief that confidence is the most important product you can apply. Previous Playmates of the Year, including Holly Madison and Kendra Wilkinson, have used the title as a launch pad for media careers, and the 2024 honoree is already in conversations with two major networks about a reality series.",
+    isBreaking: false,
+  },
+  {
+    category: "HAIR",
     categoryVariant: "gold",
-    headline: "Netflix's Leading Ladies: The Faces Shaping Beauty Standards",
-    body: "When Jenna Ortega appeared on the Wednesday press tour with razor-sharp blunt-cut fringe and a wardrobe composed entirely of blacks and muted grays, beauty search trends shifted within hours — a testament to how completely Netflix stars now drive the beauty conversation. Ana de Armas, whose turn in the streaming giant's Blonde prompted global conversation about Marilyn Monroe's makeup iconography, became the face of Lancôme within the same quarter, and her warm bronzed look in every red carpet appearance since has been recreated millions of times across TikTok and YouTube tutorials. Anya Taylor-Joy, the most photographed woman on Netflix's roster, has single-handedly revived the deep plum lip and the sharp, drawn-on beauty mark — looks lifted directly from her character Beth Harmon in The Queen's Gambit and reinterpreted for 2024. These women are not simply promoting their projects; they are actively authoring beauty trends, collaborating with brands, and building beauty empires that will long outlast any single streaming season. Netflix has become, inadvertently, one of the most powerful beauty and fashion platforms in the world.",
+    headline:
+      "The Sleek Bun is 2024's Most-Requested Salon Style — Why It's Not Going Away",
+    body: "The sleek, low bun — smooth, architectural, no flyaway permitted — has overtaken the effortless 'undone' styles that dominated the previous three years and become 2024's most-requested salon appointment across the United States and Europe. Colorists and stylists from New York's most-booked salons to London's blow-dry bars report that clients are arriving with reference images of Hailey Bieber, Rosie Huntington-Whiteley, and Zendaya's recent red carpet looks — all featuring the pulled-back, skin-tight bun applied with gel, serum, and the kind of precision that disguises effort entirely. The look has driven a resurgence in edge-control gels, hair-slicking serums, and boar-bristle brushes — tools that had been gathering dust through the 'textured and tousled' era but are now flying off shelves. Salon appointment demand for blowouts and professional sleek styling has risen 30 percent year-over-year, according to StyleSeat data, with the bun cited as the primary driver. What makes it endure, stylists say, is its rare ability to read as both ultra-casual and entirely formal depending on accessories and garment — a versatility that suits women across industries and occasions.",
+    isBreaking: false,
   },
   {
-    category: "TALENT — PRIME VIDEO",
+    category: "PLAYBOY × FASHION",
     categoryVariant: "sepia",
-    headline: "Prime Video's Rising Stars: Beauty Icons of the Streaming Age",
-    body: "Prime Video's expanding roster of original programming has produced a quietly remarkable generation of beauty icons, each approaching their aesthetic with a distinctiveness that sets them apart from the broader streaming landscape. The cast of Daisy Jones & The Six, Prime's acclaimed 1970s rock drama, sparked a full-scale revival of the decade's beauty codes: sun-warmed skin, feathered hair, mascara applied with intention and left to smudge slightly, and lips in earthy roses and terracottas that recall the spirit of a Laurel Canyon summer. Phoebe Dynevor, who parlayed her Bridgerton fame into a Prime Video career, brings a Regency-meets-modern sensibility to beauty — her signature is a refined, glasslike complexion offset by one bold element, whether that's an unexpected eye shade or a lip in deep berry. The network's Citadel cast has introduced an entirely different language: sleek, high-contrast beauty with architectural liner and defined brows that read as international espionage chic. What Prime Video's stars share, regardless of genre, is a commitment to beauty that feels authored — not assembled by committee, but genuinely expressive of who they are.",
+    headline:
+      "Playboy Collaborates with High Fashion for Its Most Editorial Season Yet",
+    body: "Playboy's fashion editorial output for 2024 has entered genuinely high-fashion territory, with collaborations and creative direction that place the brand in conversation with publications like i-D, AnOther, and CR Fashion Book. The brand's fall fashion spread, shot by a photographer whose work has appeared in Vogue Italia and System Magazine, featured styling by a former Saint Laurent collaborator — a pairing that produced images described by fashion critics as 'the most visually sophisticated work Playboy has produced in thirty years.' The editorial featured clothing from Acne Studios, Coperni, and Y-Project alongside the kind of conceptual body painting that made early Playboy a legitimate art publication before the concept was forgotten. Commercially, the brand has partnered with a vintage-inspired swimwear label and a Los Angeles streetwear house for capsule collections that sold through in under 72 hours. For Playboy, the pivot toward high-fashion collaboration is both a creative statement and a market strategy: repositioning the brand with younger, style-conscious audiences who engage with fashion as art, culture, and identity — not just clothing.",
     isBreaking: true,
-  },
-  {
-    category: "FASHION",
-    categoryVariant: "burgundy",
-    headline: "The It-Bag is Back: Arm Candy Rules the Red Carpet",
-    body: "After a brief period of fashion asceticism — the quiet luxury era in which the handbag was expected to whisper rather than speak — the statement bag has returned to the red carpet with absolute authority. At this season's fashion weeks, the arm candy in the front row was as scrutinized as the runway itself: Bottega Veneta's Andiamo in cognac crocodile-embossed leather appeared on no fewer than twelve influential guests at Milan alone. Netflix premiere carpets have become particularly fertile ground for the bag moment — stars arriving to Stranger Things screenings and Bridgerton launch events carrying Chanel's new oval clutch in ivory satin, or the Valentino Garavani Rockstud satchel in a celadon green that immediately sold out in all three sizes. Sydney Sweeney's partnership with Miu Miu placed the brand's micro top-handle bag in the hands of the most photographed woman at every major premiere this quarter. On Prime Video's red carpets, Prada's Re-Nylon messenger has been the quiet choice of actresses who understand that the most considered bag choice is one that almost doesn't look chosen at all. The It-bag is not back in the sense that it ever truly left — it's back in the sense that fashion has given itself permission to love it again, loudly and publicly.",
   },
 ];
 
+const PREVIEW_LENGTH = 200;
+
 export function BeautyNewsPage() {
+  const [expandedArticles, setExpandedArticles] = useState<Set<number>>(
+    new Set(),
+  );
+
+  const toggleArticle = (i: number) => {
+    setExpandedArticles((prev) => {
+      const next = new Set(prev);
+      next.has(i) ? next.delete(i) : next.add(i);
+      return next;
+    });
+  };
+
   const todaysDate = new Date().toLocaleDateString("en-US", {
     weekday: "long",
     year: "numeric",
     month: "long",
     day: "numeric",
   });
+
+  const breakingCount = newsArticles.filter((a) => a.isBreaking).length;
 
   return (
     <main
@@ -209,7 +235,7 @@ export function BeautyNewsPage() {
             className="font-heading text-[0.75rem] tracking-[0.3em] uppercase mb-2"
             style={{ color: "oklch(0.5 0.06 50)" }}
           >
-            Daily Dispatches from Fashion, Beauty &amp; Talent
+            Daily Dispatches from Beauty, Skincare &amp; Playboy
           </p>
 
           <p
@@ -235,8 +261,8 @@ export function BeautyNewsPage() {
             className="font-heading text-[0.62rem] tracking-[0.22em] uppercase text-center sm:text-left"
             style={{ color: "oklch(0.72 0.12 75 / 0.8)" }}
           >
-            Vol. MMXXIV &nbsp;·&nbsp; The VENICE News Desk &nbsp;·&nbsp; Fashion
-            · Makeup · Talent
+            Vol. MMXXIV &nbsp;·&nbsp; The VENICE News Desk &nbsp;·&nbsp; Beauty
+            · Skincare · Playboy · Hair
           </p>
           <div className="flex items-center gap-3">
             <span
@@ -253,7 +279,8 @@ export function BeautyNewsPage() {
               className="font-heading text-[0.55rem] tracking-[0.18em] uppercase"
               style={{ color: "oklch(0.72 0.12 75 / 0.7)" }}
             >
-              2 Fresh Dispatches Today
+              {breakingCount} Fresh Dispatch{breakingCount !== 1 ? "es" : ""}{" "}
+              Today
             </span>
           </div>
         </div>
@@ -262,93 +289,120 @@ export function BeautyNewsPage() {
       {/* ── ARTICLES GRID ──────────────────────────────────── */}
       <section className="max-w-5xl mx-auto px-6 py-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {newsArticles.map((article, i) => (
-            <article
-              key={article.headline}
-              className="ornate-card p-7 flex flex-col"
-            >
-              {/* Top gold rule */}
-              <div
-                className="h-px w-full mb-5"
-                style={{
-                  background:
-                    "linear-gradient(90deg, oklch(0.72 0.12 75), transparent)",
-                }}
-              />
+          {newsArticles.map((article, i) => {
+            const isExpanded = expandedArticles.has(i);
+            const isLong = article.body.length > PREVIEW_LENGTH;
+            const displayBody =
+              isExpanded || !isLong
+                ? article.body
+                : `${article.body.slice(0, PREVIEW_LENGTH)}...`;
 
-              {/* Category + Breaking badge row */}
-              <div className="flex items-start justify-between mb-4 gap-2 flex-wrap">
-                <EraBadge
-                  text={article.category}
-                  variant={article.categoryVariant}
+            return (
+              <article
+                key={article.headline}
+                className="ornate-card p-7 flex flex-col"
+              >
+                {/* Top gold rule */}
+                <div
+                  className="h-px w-full mb-5"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, oklch(0.72 0.12 75), transparent)",
+                  }}
                 />
-                {article.isBreaking && (
-                  <span
-                    className="font-heading text-[0.55rem] tracking-[0.2em] uppercase px-2.5 py-1 animate-pulse"
+
+                {/* Category + Breaking badge row */}
+                <div className="flex items-start justify-between mb-4 gap-2 flex-wrap">
+                  <EraBadge
+                    text={article.category}
+                    variant={article.categoryVariant}
+                  />
+                  {article.isBreaking && (
+                    <span
+                      className="font-heading text-[0.55rem] tracking-[0.2em] uppercase px-2.5 py-1 animate-pulse"
+                      style={{
+                        backgroundColor: "oklch(0.35 0.12 15)",
+                        color: "oklch(0.97 0.01 85)",
+                        fontWeight: 700,
+                      }}
+                    >
+                      ◆ Breaking
+                    </span>
+                  )}
+                </div>
+
+                {/* Headline */}
+                <h2
+                  className="font-serif mb-4"
+                  style={{
+                    fontSize: "1.2rem",
+                    color: "oklch(0.25 0.06 30)",
+                    lineHeight: 1.35,
+                    fontWeight: 700,
+                  }}
+                >
+                  {article.headline}
+                </h2>
+
+                {/* Gold divider mini */}
+                <div
+                  className="h-px w-16 mb-4"
+                  style={{ backgroundColor: "oklch(0.72 0.12 75 / 0.5)" }}
+                />
+
+                {/* Body paragraph */}
+                <p
+                  className="font-body leading-relaxed flex-1"
+                  style={{
+                    fontSize: "0.97rem",
+                    color: "oklch(0.38 0.04 45)",
+                    lineHeight: 1.8,
+                  }}
+                >
+                  {displayBody}
+                </p>
+
+                {/* Read More / Read Less button */}
+                {isLong && (
+                  <button
+                    type="button"
+                    onClick={() => toggleArticle(i)}
+                    className="font-heading text-[0.62rem] tracking-[0.2em] uppercase mt-3 cursor-pointer self-start"
                     style={{
-                      backgroundColor: "oklch(0.35 0.12 15)",
-                      color: "oklch(0.97 0.01 85)",
-                      fontWeight: 700,
+                      color: "oklch(0.35 0.12 15)",
+                      background: "none",
+                      border: "none",
+                      borderBottom: "1px solid oklch(0.72 0.12 75)",
+                      padding: "0 0 2px 0",
                     }}
                   >
-                    ◆ Breaking
-                  </span>
+                    {isExpanded ? "Read Less ▲" : "Read More ▼"}
+                  </button>
                 )}
-              </div>
 
-              {/* Headline */}
-              <h2
-                className="font-serif mb-4"
-                style={{
-                  fontSize: "1.2rem",
-                  color: "oklch(0.25 0.06 30)",
-                  lineHeight: 1.35,
-                  fontWeight: 700,
-                }}
-              >
-                {article.headline}
-              </h2>
+                {/* Bottom rule + byline */}
+                <div
+                  className="h-px w-full mt-5 mb-4"
+                  style={{ backgroundColor: "oklch(0.72 0.12 75 / 0.2)" }}
+                />
 
-              {/* Gold divider mini */}
-              <div
-                className="h-px w-16 mb-4"
-                style={{ backgroundColor: "oklch(0.72 0.12 75 / 0.5)" }}
-              />
-
-              {/* Body paragraph */}
-              <p
-                className="font-body leading-relaxed flex-1"
-                style={{
-                  fontSize: "0.97rem",
-                  color: "oklch(0.38 0.04 45)",
-                  lineHeight: 1.8,
-                }}
-              >
-                {article.body}
-              </p>
-
-              {/* Bottom rule + byline */}
-              <div
-                className="h-px w-full mt-5 mb-4"
-                style={{ backgroundColor: "oklch(0.72 0.12 75 / 0.2)" }}
-              />
-
-              <div className="flex items-center justify-between gap-2">
-                <span
-                  className="font-heading text-[0.58rem] tracking-[0.18em] uppercase italic"
-                  style={{ color: "oklch(0.55 0.04 55 / 0.8)" }}
-                >
-                  By the VENICE News Desk
-                </span>
-                <span
-                  className="font-heading text-[0.55rem] tracking-[0.14em] uppercase"
-                  style={{ color: "oklch(0.65 0.08 65 / 0.7)" }}
-                >
-                  {i + 1} / {newsArticles.length}
-                </span>
-              </div>
-            </article>
-          ))}
+                <div className="flex items-center justify-between gap-2">
+                  <span
+                    className="font-heading text-[0.58rem] tracking-[0.18em] uppercase italic"
+                    style={{ color: "oklch(0.55 0.04 55 / 0.8)" }}
+                  >
+                    By the VENICE News Desk
+                  </span>
+                  <span
+                    className="font-heading text-[0.55rem] tracking-[0.14em] uppercase"
+                    style={{ color: "oklch(0.65 0.08 65 / 0.7)" }}
+                  >
+                    {i + 1} / {newsArticles.length}
+                  </span>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </section>
 
@@ -389,8 +443,8 @@ export function BeautyNewsPage() {
             }}
           >
             VENICE brings you six curated editorial dispatches daily — from the
-            fashion capitals, the streaming universe, and the beauty counters
-            that define the zeitgeist.
+            beauty counters, the Playboy archives, and the skincare science that
+            defines the zeitgeist.
           </p>
         </div>
       </div>
