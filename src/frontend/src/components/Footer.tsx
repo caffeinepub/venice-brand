@@ -7,6 +7,7 @@ type Page =
   | "fashion"
   | "talent"
   | "contact"
+  | "recommendations"
   | "signup"
   | "signin"
   | "inbox";
@@ -162,7 +163,14 @@ export function Footer({ onNavigate }: FooterProps) {
             />
             <ul className="space-y-2">
               {(
-                ["home", "beauty", "fashion", "talent", "contact"] as Page[]
+                [
+                  "home",
+                  "beauty",
+                  "fashion",
+                  "talent",
+                  "contact",
+                  "recommendations",
+                ] as Page[]
               ).map((page) => (
                 <li key={page}>
                   <button

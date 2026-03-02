@@ -7,6 +7,7 @@ import { ContactPage } from "./pages/ContactPage";
 import { FashionPage } from "./pages/FashionPage";
 import { HomePage } from "./pages/HomePage";
 import { InboxPage } from "./pages/InboxPage";
+import { RecommendationsPage } from "./pages/RecommendationsPage";
 import { SignInPage } from "./pages/SignInPage";
 import { SignUpPage } from "./pages/SignUpPage";
 import { TalentPage } from "./pages/TalentPage";
@@ -17,6 +18,7 @@ export type Page =
   | "fashion"
   | "talent"
   | "contact"
+  | "recommendations"
   | "signup"
   | "signin"
   | "inbox";
@@ -65,6 +67,8 @@ export default function App() {
         return <TalentPage onNavigate={handleNavigate} />;
       case "contact":
         return <ContactPage />;
+      case "recommendations":
+        return <RecommendationsPage />;
       case "signup":
         return <SignUpPage onNavigate={handleNavigate} />;
       case "signin":

@@ -9,6 +9,7 @@ type Page =
   | "fashion"
   | "talent"
   | "contact"
+  | "recommendations"
   | "signup"
   | "signin"
   | "inbox";
@@ -24,6 +25,7 @@ const mainNavLinks: { label: string; page: Page }[] = [
   { label: "Fashion", page: "fashion" },
   { label: "Talent", page: "talent" },
   { label: "Contact", page: "contact" },
+  { label: "Recs", page: "recommendations" },
 ];
 
 export function Navigation({ currentPage, onNavigate }: NavigationProps) {
