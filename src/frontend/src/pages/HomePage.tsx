@@ -291,7 +291,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   className="font-heading text-xs tracking-[0.15em] uppercase not-italic"
                   style={{ color: "oklch(0.5 0.04 60)" }}
                 >
-                  Keegan Loliez — The CEO of VENICE
+                  Keegan Brooks — The CEO of VENICE
                 </cite>
               </div>
             </div>
@@ -495,7 +495,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 className="font-heading text-xs tracking-[0.25em] uppercase not-italic"
                 style={{ color: "oklch(0.72 0.12 75)" }}
               >
-                — Keegan Loliez, The CEO of VENICE
+                — Keegan Brooks, The CEO of VENICE
               </cite>
             </footer>
           </blockquote>
