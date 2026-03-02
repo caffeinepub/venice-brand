@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Footer } from "./components/Footer";
 import { Navigation } from "./components/Navigation";
 import { useAuth } from "./hooks/useAuth";
+import { BeautyNewsPage } from "./pages/BeautyNewsPage";
 import { BeautyPage } from "./pages/BeautyPage";
 import { ContactPage } from "./pages/ContactPage";
 import { FashionPage } from "./pages/FashionPage";
@@ -19,6 +20,7 @@ export type Page =
   | "talent"
   | "contact"
   | "recommendations"
+  | "beautynews"
   | "signup"
   | "signin"
   | "inbox";
@@ -69,6 +71,8 @@ export default function App() {
         return <ContactPage />;
       case "recommendations":
         return <RecommendationsPage />;
+      case "beautynews":
+        return <BeautyNewsPage />;
       case "signup":
         return <SignUpPage onNavigate={handleNavigate} />;
       case "signin":

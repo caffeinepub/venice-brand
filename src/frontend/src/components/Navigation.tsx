@@ -10,6 +10,7 @@ type Page =
   | "talent"
   | "contact"
   | "recommendations"
+  | "beautynews"
   | "signup"
   | "signin"
   | "inbox";
@@ -26,6 +27,7 @@ const mainNavLinks: { label: string; page: Page }[] = [
   { label: "Talent", page: "talent" },
   { label: "Contact", page: "contact" },
   { label: "Recs", page: "recommendations" },
+  { label: "News", page: "beautynews" },
 ];
 
 export function Navigation({ currentPage, onNavigate }: NavigationProps) {
