@@ -14,68 +14,76 @@ interface Article {
 
 const articles: Article[] = [
   {
-    category: "SKINCARE",
-    headline: "The Cold Cream Ritual: A Hollywood Secret Revived",
-    era: "circa 1930",
+    category: "TIMELESS LOOKS",
+    headline: "Marilyn Monroe's Luminous Glow: The Art of the Platinum Blonde",
+    era: "circa 1953",
     excerpt:
-      "Long before micellar water graced our shelves, the silver screen's most radiant stars swore by cold cream — an emollient marvel rooted in ancient apothecary wisdom.",
+      "Marilyn Monroe's signature luminosity was no accident — it was a carefully studied marriage of platinum hair, porcelain foundation, and a beauty philosophy that treated radiance as a full-body art form.",
     fullExcerpt:
-      "The technique is deceptively simple: massage a generous amount of cold cream into the skin in upward circular motions, then remove with a warm flannel cloth. The result is a complexion of extraordinary clarity — stripped of the day's grime without disturbing the skin's delicate moisture barrier. Actresses from Joan Crawford to Grace Kelly credited the ritual with their luminous, camera-ready skin.",
+      "Monroe worked closely with makeup artist Allan 'Whitey' Snyder, whose genius lay in amplifying rather than masking. A heavy white highlighter dusted the brow bone, a pinch of Vaseline on the eyelids gave glasslike shine, and her lips were lined slightly over the natural edge in a soft, pillowed shape. 'Beauty is something from within,' she once said — but the technique was flawlessly precise.",
+  },
+  {
+    category: "TIMELESS LOOKS",
+    headline: "Marilyn's Red Lip: The Most Photographed Mouth in History",
+    era: "circa 1950–1962",
+    excerpt:
+      "The red-orange lip Marilyn Monroe wore in Some Like It Hot and Gentlemen Prefer Blondes became one of the most imitated beauty signatures the world has ever known.",
+    fullExcerpt:
+      "Her lip formula was a blend of two shades layered for dimension — typically a blue-toned red over a nude liner that extended fractionally beyond her natural lip line. The upper lip was painted with the classic cupid's bow exaggerated, while the lower lip was slightly fuller, creating that irresistible softness. The key was blotting between layers to achieve depth that lasted under studio lighting.",
   },
   {
     category: "SKINCARE",
-    headline: "Rose Water & Glycerin: The Victorian Complexion Formula",
-    era: "circa 1880",
+    headline: "Whitney Houston's Radiant Skin: The 1980s Backstage Secret",
+    era: "circa 1985",
     excerpt:
-      "Before serums and essences, Victorian beauties maintained their celebrated porcelain complexions with a preparation so elegant in its simplicity that it has endured for over a century.",
+      "Whitney Houston's skin glowed with a warmth and luminosity that stopped audiences cold — a rich, hydrated complexion she maintained through years of demanding touring and performance.",
     fullExcerpt:
-      "Mix equal parts pure rose water and glycerin in a clean glass bottle, shake gently, and apply to freshly cleansed skin with a cotton pad. The glycerin draws moisture into the skin while the rose water soothes and refines. Ladies of the Victorian era applied this formula morning and evening, and pharmacists still stock the ingredients today — a testament to enduring efficacy.",
+      "Whitney's beauty team attributed her glow to diligent moisture-locking: a rich shea-based balm applied generously over warm, damp skin after every performance. She never skipped SPF during daytime, and her signature technique was pressing — never rubbing — product into the skin to preserve its natural elasticity. The 1980s were an era of bold colour, but great skin was always the canvas.",
   },
   {
     category: "HAIR",
-    headline: "Pin Curls & Permanence: Setting Hair Like a 1940s Starlet",
-    era: "circa 1944",
+    headline: "The Big Hair Revolution: Power Curls of the 1980s",
+    era: "circa 1983–1989",
     excerpt:
-      "The perfectly coiffed waves of Hollywood's wartime actresses were not accidents of nature — they were the product of a meticulous, methodical pin curl ritual that any woman can master.",
+      "From Whitney Houston to Tina Turner, the 1980s produced the most unapologetically magnificent hair the music world had ever seen — voluminous, proud, and unmistakably powerful.",
     fullExcerpt:
-      "Begin with damp, freshly washed hair. Working in one-inch sections, wind each section around two fingers, slide your fingers out, and secure with a pin curl clip flat to the skull. Sleep with a silk scarf to protect the set. In the morning, gently release each curl and brush through with a natural bristle brush in long, sweeping strokes. The result: waves of remarkable definition and lasting hold.",
+      "The look required a diffuser on high heat, generous amounts of mousse worked through damp sections from root to tip, then head-flipping to build maximum lift at the crown. Tina Turner's wild electric mane was achieved with teasing, heat, and a finishing mist of high-shine spray. Whitney's soft, rounded curls were set on jumbo rollers, dried under a hood, then gently separated with the fingers — never a comb. Volume was the vocabulary of power.",
   },
   {
-    category: "HAIR",
-    headline: "The Art of the Chignon: From Audrey to the Modern Muse",
-    era: "circa 1957",
+    category: "TIMELESS LOOKS",
+    headline: "Madonna's Iconic Brow: The 1980s Defined Face",
+    era: "circa 1984",
     excerpt:
-      "No hairstyle speaks more eloquently of feminine grace and self-possession than the chignon — that simple, masterful gathering of hair that transforms any woman into an icon.",
+      "In the mid-1980s, Madonna reclaimed the thick, defined brow in all its natural glory — a direct rejection of the pencil-thin arches of the previous decade and a blueprint for every strong brow that followed.",
     fullExcerpt:
-      "The secret lies not in complexity but in intention. Brush hair smooth at the nape, twist into a low knot, and secure with a minimum of pins. The effortlessness is studied — every stray strand placed with deliberate nonchalance. Audrey Hepburn's collaborator Alexandre de Paris understood that the chignon's power was in what it withheld: it suggested, rather than declared.",
+      "The technique was bold and deliberate: brows brushed upward and outward, filled with short hair-like strokes using a dark pencil, then set with a clear brow gel. The result was a face that read confident and untouchable — whether in a music video or on a magazine cover. Madonna understood that strong features photographed as strength of character, and beauty editors the world over took note.",
+  },
+  {
+    category: "SKINCARE",
+    headline: "The Cold Cream Ritual: A Hollywood Secret From Monroe to Now",
+    era: "circa 1930–present",
+    excerpt:
+      "Long before micellar water graced our shelves, the silver screen's most radiant stars — Marilyn Monroe among them — swore by cold cream as the foundation of their nightly cleanse.",
+    fullExcerpt:
+      "Monroe famously applied cold cream generously at the end of every shoot day, massaging in upward circles and removing with a warm flannel. The emollient formula stripped makeup without stripping moisture, leaving the complexion soft and ready for the studio's brutal morning call times. The technique remains unchanged and unmatched — a ritual endorsed by generations of luminous women.",
   },
   {
     category: "WELLNESS",
-    headline:
-      "Beauty Sleep: What the Studio System Prescribed for Radiant Skin",
-    era: "circa 1938",
+    headline: "Tina Turner's Ageless Energy: Movement as Beauty Practice",
+    era: "circa 1984",
     excerpt:
-      "The Hollywood studio system, for all its excesses, understood one fundamental truth that modern science has since confirmed: nothing restores and regenerates the complexion like deep, uninterrupted sleep.",
+      "At a time when beauty rituals centered on products and powders, Tina Turner proved that the most transformative beauty practice was movement — and she performed it at full intensity every night on stage.",
     fullExcerpt:
-      "Studio physicians prescribed a regimen of eight to nine hours on a silk pillowcase, with a nightcap of warm milk and honey to ensure restfulness. They recommended retiring with a lightly applied facial oil — jojoba or rose hip were favoured — to support the skin's nocturnal repair processes. The ritual of retiring beautifully was as important as any product.",
+      "Tina's approach to wellness was rooted in Buddhist practice and high-intensity performance. She credited her luminous skin and extraordinary stamina to consistent movement, adequate hydration before and after shows, and a focused mental discipline that quieted stress. Her legs — the most famous in rock and roll — were maintained not by any machine but by the sheer physical demands of three-hour shows, five nights a week.",
   },
   {
-    category: "TIMELESS LOOKS",
-    headline: "The Red Lip: A Century of Power and Grace",
-    era: "circa 1920–present",
+    category: "HAIR",
+    headline: "Pin Curls & Platinum: Marilyn Monroe's Curl-Setting Ritual",
+    era: "circa 1953",
     excerpt:
-      "From the silent film vamps of the 1920s to the victory roll heroines of the 1940s, the red lip has been beauty's most enduring and eloquent statement — simultaneously bold and timeless.",
+      "The soft, luminous platinum waves that defined Marilyn Monroe's screen image were not natural — they were the result of a painstaking overnight pin curl ritual performed before every major shoot.",
     fullExcerpt:
-      "The application is a ceremony unto itself. Begin with a lip liner in a close-matching tone, tracing just outside the natural lip line to create a defined, lasting edge. Fill with a rich, pigment-dense red — blue-reds for cool complexions, brick-reds for warm. Blot, reapply, blot once more. The finished effect should appear effortless — the paradox of the perfectly made-up face.",
-  },
-  {
-    category: "TIMELESS LOOKS",
-    headline: "Cat Eye Mastery: From the Silver Screen to the Street",
-    era: "circa 1960",
-    excerpt:
-      "The winged eyeliner — precise, dramatic, unmistakable — is perhaps the most technically demanding and rewarding technique in the classical beauty repertoire.",
-    fullExcerpt:
-      "Using a fine-tipped liner brush and a pot of black kohl, begin from the inner corner and draw along the lash line in short, feathered strokes. At the outer corner, extend the line and flick upward in a clean wing, guided by the angle of your lower lash line as a compass. The wing's length and angle are a matter of personal idiom — longer for drama, shorter for daytime refinement. Brigitte Bardot extended hers nearly to her temples.",
+      "Her hair was bleached to that specific shade described as 'champagne white' — not platinum, not yellow, but a warm, almost candlelit tone. Then each section was wound tightly, pinned flat, and covered in a silk scarf overnight. In the morning, Whitey Snyder or Kenneth Battelle would release each curl and style with a wide-tooth pick, never a brush, to maintain separation and bounce. The effect was effortless. The process was anything but.",
   },
 ];
 
@@ -295,11 +303,11 @@ export function BeautyPage() {
               lineHeight: 1.7,
             }}
           >
-            VENICE shares beauty wisdom, history, and timeless techniques. We
-            are not a shop. We do not sell products. We celebrate the art of
-            beauty across the ages — from Victorian apothecaries to Hollywood
-            dressing rooms, from wartime ingenuity to the glamour of the golden
-            screen.
+            VENICE celebrates the beauty icons who defined their eras — from
+            Marilyn Monroe's luminous Hollywood glow to the bold, electric power
+            looks of 1980s icons like Whitney Houston, Tina Turner, and Madonna.
+            We share their wisdom, their techniques, and the secrets behind the
+            most unforgettable faces in history.
           </p>
         </div>
       </div>
