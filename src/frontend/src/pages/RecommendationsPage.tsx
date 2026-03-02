@@ -28,12 +28,12 @@ const beautyBrands: BrandCard[] = [
     badge: "Indie Darling",
   },
   {
-    name: "Boreal Beauty",
-    tagline: "Born of the northern wild",
+    name: "L'Oréal",
+    tagline: "Because you're worth it",
     description:
-      "Inspired by the pristine boreal forests of the north, this brand harnesses clean, plant-derived ingredients to craft skincare that feels as pure and vast as the wilderness itself.",
-    url: "https://borealbeauty.com",
-    badge: "Clean Beauty",
+      "One of the world's most iconic beauty brands, L'Oréal offers everything from drugstore staples to luxury skincare and haircare. Their Elvive line, True Match foundation, and Revitalift serums are cult classics for a reason.",
+    url: "https://loreal.com",
+    badge: "Beauty Icon",
   },
   {
     name: "Rare Beauty",
